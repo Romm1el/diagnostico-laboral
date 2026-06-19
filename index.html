@@ -3,186 +3,257 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automatización con IA para despachos laborales y PyMEs en Culiacán</title>
+  <title>Diagnóstico laboral gratuito para PYMES</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       color: #333;
-      background-color: #f8f9fa;
+      background-color: #ffffff;
     }
     header {
-      background-color: #003366;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 20px 40px;
     }
-
-    /* Navigation bar styles */
-    nav {
-      background-color: #002a4d;
-      color: #fff;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    nav ul {
-      list-style-type: none;
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
     }
-    nav li {
-      margin: 0 15px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
+    .nav a {
+      color: #003366;
       font-weight: bold;
+      text-decoration: none;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .nav a.cta {
+      background-color: #0dac67;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
     }
-    header img {
-      max-width: 150px;
+    .hero {
+      background-color: #f2f8fc;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #003366;
       margin-bottom: 20px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    .hero .highlight {
+      color: #f6b400;
     }
-    header p {
-      margin-top: 15px;
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
       font-size: 1.1rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .cta-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 24px;
-      background-color: #0066cc;
+    .hero a.cta {
+      background-color: #0dac67;
       color: #fff;
-      text-decoration: none;
+      padding: 12px 24px;
       border-radius: 4px;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .features .item {
+      text-align: center;
+      flex: 1 0 200px;
+    }
+    .features .item h3 {
+      color: #003366;
+      margin-bottom: 5px;
     }
     section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 80px 20px;
     }
-    section h2 {
-      margin-top: 0;
+    .section-title {
+      text-align: center;
       color: #003366;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
     }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
     }
-    ul li {
-      margin: 8px 0;
-      padding-left: 18px;
-      position: relative;
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 30px;
+      flex: 1 0 280px;
+      max-width: 320px;
     }
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #0066cc;
+    .card h4 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      margin-top: 0;
+    }
+    .cta-section {
+      background-color: #fdf7e7;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta-section h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .cta-section a {
+      background-color: #0dac67;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      display: inline-block;
     }
     footer {
       background-color: #003366;
       color: #fff;
       text-align: center;
       padding: 20px;
+      font-size: 0.9rem;
     }
-
-    /* Alternate background for selected sections */
-    .alt {
-      background-color: #eef6fd;
+    @media (max-width: 768px) {
+      .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .features {
+        flex-direction: column;
+      }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- Navigation bar -->
-<nav>
-  <ul>
-    <li><a href="#problema">Problema</a></li>
-    <li><a href="#revisamos">¿Qué revisamos?</a></li>
-    <li><a href="#recibes">¿Qué recibes?</a></li>
-    <li><a href="#publico">¿Para quién?</a></li>
-    <li><a href="#planes">Planes</a></li>
-    <li><a href="#formulario">Contacto</a></li>
-  </ul>
-</nav>
-
 <header>
-  <!-- Logo actualizado -->
-  <img src="logo.png" alt="Diagnóstico Laboral Culiacán">
-  <h1>Automatización con IA para despachos laborales y PyMEs en Culiacán</h1>
-  <p>Detecta riesgos laborales, organiza expedientes y automatiza recordatorios antes de que un problema se vuelva demanda, multa o caos administrativo.</p>
-  <a href="#formulario" class="cta-button">Agendar diagnóstico gratuito</a>
+  <div class="nav">
+    <div class="logo">
+      <img src="logo_final.png" alt="Automatización Laboral" style="height:50px;">
+    </div>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#que">¿Qué reviso?</a></li>
+      <li><a href="#beneficios">¿Qué obtienes?</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#formulario" class="cta">Solicitar diagnóstico</a></li>
+    </ul>
+  </div>
 </header>
 
-<section id="problema">
-  <h2>Problema</h2>
-  <p>Muchas PyMEs operan sin contratos actualizados, expedientes desordenados, o recordatorios de vencimientos legales. Esto puede derivar en sanciones, demandas costosas o pérdida de control sobre su personal y proveedores.</p>
+<section class="hero" id="inicio">
+  <h1>Diagnóstico laboral <span class="highlight">gratuito</span> para PYMES</h1>
+  <p>Descubre tus riesgos laborales y automatiza tus procesos para ahorrar tiempo y evitar multas.</p>
+  <a href="#formulario" class="cta">Solicita tu diagnóstico gratuito</a>
+  <div class="features">
+    <div class="item">
+      <h3>Reduce riesgos</h3>
+      <p>Evita multas y sanciones</p>
+    </div>
+    <div class="item">
+      <h3>Ahorra tiempo</h3>
+      <p>Procesos más eficientes</p>
+    </div>
+    <div class="item">
+      <h3>Crecimiento</h3>
+      <p>Enfócate en tu negocio</p>
+    </div>
+  </div>
 </section>
 
-<section id="revisamos" class="alt">
-  <h2>¿Qué revisamos?</h2>
-  <ul>
-    <li>Contratos laborales y actualizaciones.</li>
-    <li>Expedientes digitales de cada trabajador.</li>
-    <li>Control de horarios, descansos y vacaciones.</li>
-    <li>Altas, bajas y salarios en IMSS.</li>
-    <li>Planes de seguridad, higiene y NOM-035.</li>
-    <li>Subcontratación y proveedores REPSE.</li>
-  </ul>
+<section id="que">
+  <h2 class="section-title">¿Qué revisamos?</h2>
+  <div class="cards">
+    <div class="card">
+      <h4>Contratos y expedientes</h4>
+      <p>Revisión de contratos firmados y expedientes completos de cada trabajador.</p>
+    </div>
+    <div class="card">
+      <h4>Nómina y movimientos</h4>
+      <p>Altas, bajas y salarios registrados correctamente en IMSS, SUA e INFONAVIT.</p>
+    </div>
+    <div class="card">
+      <h4>Seguridad y salud</h4>
+      <p>Planes de seguridad, higiene y NOM‑035, así como registro de incidentes.</p>
+    </div>
+    <div class="card">
+      <h4>Procesos internos</h4>
+      <p>Control de horarios, vacaciones, reportes y obligaciones fiscales.</p>
+    </div>
+  </div>
 </section>
 
-<section id="recibes">
-  <h2>¿Qué recibes gratis?</h2>
-  <p>Un reporte semáforo de una página con:</p>
-  <ul>
-    <li>Riesgo general (verde, amarillo o rojo).</li>
-    <li>Principales faltantes documentales y operativos.</li>
-    <li>Recomendaciones de automatización simples.</li>
-    <li>Propuesta de implementación a tu medida.</li>
-  </ul>
-</section>
-
-<section id="publico" class="alt">
-  <h2>¿Para quién es?</h2>
-  <p>Restaurantes, clínicas, despachos contables, constructoras, agencias y cualquier PyME de 5–50 trabajadores que quiera:</p>
-  <ul>
-    <li>Reducir riesgos legales.</li>
-    <li>Organizar su documentación laboral y de proveedores.</li>
-    <li>Automatizar recordatorios y procesos con herramientas accesibles.</li>
-  </ul>
+<section id="beneficios">
+  <h2 class="section-title">¿Qué obtienes?</h2>
+  <div class="cards">
+    <div class="card">
+      <h4>Reporte de hallazgos</h4>
+      <p>Resumen claro de tus riesgos y áreas de mejora.</p>
+    </div>
+    <div class="card">
+      <h4>Plan de acción</h4>
+      <p>Pasos concretos para corregir y automatizar procesos.</p>
+    </div>
+    <div class="card">
+      <h4>Recomendaciones prácticas</h4>
+      <p>Herramientas y plantillas para avanzar rápidamente.</p>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:20px;"><strong>100 % gratis y sin compromiso</strong></p>
 </section>
 
 <section id="planes">
-  <h2>Planes de implementación</h2>
-  <ul>
-    <li><strong>Orden Express:</strong> Semáforo laboral, checklist digital y carpeta de expedientes.</li>
-    <li><strong>Implementación:</strong> Plantillas, calendarios, automatizaciones, entrenamiento.</li>
-    <li><strong>Monitoreo mensual:</strong> Alertas de vencimientos, revisiones periódicas y soporte.</li>
-  </ul>
+  <h2 class="section-title">Cómo trabajaremos juntos</h2>
+  <div class="cards">
+    <div class="card">
+      <h4>Diagnóstico</h4>
+      <p>Análisis inicial de tu situación laboral.</p>
+    </div>
+    <div class="card">
+      <h4>Implementación</h4>
+      <p>Puesta en marcha de mejoras y automatizaciones.</p>
+    </div>
+    <div class="card">
+      <h4>Seguimiento</h4>
+      <p>Monitoreo y ajustes para que mantengas el orden.</p>
+    </div>
+  </div>
 </section>
 
-<section id="formulario">
-  <h2>Agendar diagnóstico gratuito</h2>
-  <p>Completa el siguiente formulario para saber si aplica a tu empresa. Nos pondremos en contacto para revisar tus necesidades.</p>
-  <p><a href="https://tally.so/r/xXgMP5" class="cta-button">Ir al formulario</a></p>
+<section class="cta-section" id="formulario">
+  <h2>Da el primer paso hoy</h2>
+  <p>Solicita tu diagnóstico gratuito y descubre cómo mejorar tu empresa.</p>
+  <a href="https://tally.so/r/xXgMP5">Ir al formulario</a>
+  <p style="margin-top:10px; font-size:0.85rem;">Es 100 % confidencial y sin compromiso.</p>
 </section>
 
 <footer>
